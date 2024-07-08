@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Afk from "./Afk.tsx";
-import Text from "./Components/Text.tsx";
 import Da from "./Da.tsx";
 import Dnd from "./Dnd.tsx";
 import Essen from "./Essen.tsx";
@@ -14,10 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <div className="container">
-        <div style={{ display: "flex" }}>
-          <Text text="Johannes" />
-          <Text text="Status:" />
-        </div>
+        <h2 style={{ fontSize: "6rem", color: "white" }}>Johannes Status:</h2>
 
         <Routes>
           <Route path="/" element={<Da />} />
@@ -31,5 +27,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       </div>
       <div className="scanlines"></div>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
