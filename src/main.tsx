@@ -12,8 +12,16 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div className="container">
-        <h2 style={{ fontSize: "6rem", color: "white" }}>Johannes Status:</h2>
+      <div
+        className="container"
+        style={{
+          width: 480,
+          height: 320,
+          overflow: "hidden",
+          border: "1px solid white",
+        }}
+      >
+        <h2 style={{ fontSize: "3em", color: "white" }}>Johannes Status:</h2>
 
         <Routes>
           <Route path="/" element={<Da />} />

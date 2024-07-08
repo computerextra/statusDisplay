@@ -17,12 +17,12 @@ html {
 
 .area {
   text-align: center;
-  font-size: 6.5em;
+  font-size: 3em;
   color: #fff;
-  letter-spacing: -7px;
-  font-weight: 700;
+  /* letter-spacing: -7px; */
+  font-weight: 600;
   text-transform: uppercase;
-  animation: blur 0.75s ease-out infinite;
+  animation: blur 1.5s ease-out infinite;
   text-shadow:
     0px 0px 5px #fff,
     0px 0px 7px #fff;

@@ -1,5 +1,5 @@
 import Text from "./Components/Text";
 
 export default function Da() {
-  return <Text text="⚠ Da und ansprechbar ⚠" />;
+  return <Text text="Anwesend" />;
 }
