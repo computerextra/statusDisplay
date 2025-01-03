@@ -62,7 +62,10 @@ function App() {
   return (
     <>
       <h1 className="flex text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">
-        Aktueller Status: {status} {getIcon()}
+        Aktueller Status:
+      </h1>
+      <h1 className="flex text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">
+        {status} {getIcon()}
       </h1>
       <h2 className="pb-2 text-3xl font-semibold tracking-tight border-b scroll-m-20 first:mt-0">
         Seit: {zeit} Uhr
