@@ -9,7 +9,7 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 
-const TIMING = 30 * 1000; // Timing in Seconds
+const TIMING = 10 * 1000; // Timing in Seconds
 
 function App() {
   const [status, setStatus] = useState<string | undefined>();
