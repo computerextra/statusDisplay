@@ -10,7 +10,14 @@ import {
 } from "lucide-react";
 import { cn } from "./lib/utils";
 
-const TIMING = 10 * 1000; // Timing in Seconds
+const TIMING = 5 * 1000; // Timing in Seconds
+
+const getStatus = async () => {
+  const res = await axios.get("https://status.computer-extra.net/status.php");
+  const d = res.data[0];
+  if (d == null) return null;
+  return d;
+};
 
 function App() {
   const [status, setStatus] = useState<string | undefined>();
@@ -19,12 +26,7 @@ function App() {
   useEffect(() => {
     // Get Status
     async function x() {
-      const res = await axios.get(
-        "https://status.computer-extra.net/status.php"
-      );
-      const d = res.data[0];
-      if (d == null) return;
-
+      const d = await getStatus();
       setStatus(d.status);
       setZeit(d.since);
     }
@@ -33,14 +35,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Reload Page
-    const timer = setTimeout(() => {
-      location.reload();
+    const interval = setInterval(async () => {
+      const d = await getStatus();
+      if (d == null) return;
+      setStatus(d.status);
+      setZeit(d.since);
     }, TIMING);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   const getIcon = () => {
