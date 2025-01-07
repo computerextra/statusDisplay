@@ -47,17 +47,17 @@ function App() {
   const getIcon = () => {
     switch (status) {
       case "Anwesend":
-        return <CheckCheck className="w-24 h-24 text-green-500 ms-4" />;
+        return <CheckCheck className="w-40 h-40 text-green-500" />;
       case "Abwesend":
-        return <Ban className="w-24 h-24 text-red-500 ms-4" />;
+        return <Ban className="w-40 h-40 text-red-500 ms-4" />;
       case "Beschäftigt":
-        return <BellOff className="w-24 h-24 text-red-500 ms-4" />;
+        return <BellOff className="w-40 h-40 text-red-500 ms-4" />;
       case "Am Telefonieren":
-        return <PhoneCall className="w-24 h-24 text-blue-500 ms-4" />;
+        return <PhoneCall className="w-40 h-40 text-blue-500 ms-4" />;
       case "Im Mittag":
-        return <UtensilsCrossed className="w-24 h-24 text-red-500 ms-4" />;
+        return <UtensilsCrossed className="w-40 h-40 text-red-500 ms-4" />;
       case "Am Rauchen":
-        return <Cigarette className="w-24 h-24 text-red-500 ms-4" />;
+        return <Cigarette className="w-40 h-40 text-red-500 ms-4" />;
     }
   };
 
@@ -85,14 +85,16 @@ function App() {
         getColor()
       )}
     >
-      <h1 className="flex text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">
-        Aktueller Status: <br />
-        {status}
+      <h1 className="text-4xl font-extrabold tracking-tight scroll-m-20 lg:text-5xl">
+        Johannes' Status: <br />
+        <span className="underline">{status}</span>
       </h1>
       <h2 className="pb-2 text-3xl font-semibold tracking-tight border-b scroll-m-20 first:mt-0">
         Seit: {zeit} Uhr
       </h2>
-      <div className="flex justify-center mt-8">{getIcon()}</div>
+      <div className="flex items-center justify-center animate-wiggle">
+        {getIcon()}
+      </div>
     </div>
   );
 }
