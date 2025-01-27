@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 import { cn } from "./lib/utils";
 
-const TIMING = 5 * 1000; // Timing in Seconds
+export const TIMING = 5 * 1000; // Timing in Seconds
 
-const getStatus = async () => {
+export const GetStatus = async () => {
   const res = await axios.get("https://status.computer-extra.net/status.php");
   const d = res.data[0];
   if (d == null) return null;
@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     // Get Status
     async function x() {
-      const d = await getStatus();
+      const d = await GetStatus();
       setStatus(d.status);
       setZeit(d.since);
     }
@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(async () => {
-      const d = await getStatus();
+      const d = await GetStatus();
       if (d == null) return;
       setStatus(d.status);
       setZeit(d.since);
