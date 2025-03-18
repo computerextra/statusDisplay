@@ -1,14 +1,15 @@
+import axios from "axios";
 import {
   Ban,
   BellOff,
   CheckCheck,
   Cigarette,
   PhoneCall,
+  Server,
   UtensilsCrossed,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { GetStatus, TIMING } from "./App";
-import axios from "axios";
 
 export default function Admin() {
   const [status, setStatus] = useState<string | undefined>();
@@ -43,6 +44,8 @@ export default function Admin() {
         | "Am Telefonieren"
         | "Im Mittag"
         | "Am Rauchen"
+        | "In Wartung"
+        | "Auf Silbers Platz"
     ) =>
     async () => {
       await axios.post("https://status.computer-extra.net/post.php", {
@@ -86,6 +89,16 @@ export default function Admin() {
         <Button onClick={handleClick("Am Rauchen")}>
           <div className="flex items-center justify-center gap-6">
             Rauchen <Cigarette className="w-4 h-4 text-red-500 ms-4" />
+          </div>
+        </Button>
+        <Button onClick={handleClick("Am Rauchen")}>
+          <div className="flex items-center justify-center gap-6">
+            Wartung <Server className="w-4 h-4 text-red-500 ms-4" />
+          </div>
+        </Button>
+        <Button onClick={handleClick("Am Rauchen")}>
+          <div className="flex items-center justify-center gap-6">
+            Silber <UtensilsCrossed className="w-4 h-4 text-red-500 ms-4" />
           </div>
         </Button>
       </div>

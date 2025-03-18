@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Ban,
@@ -6,8 +5,10 @@ import {
   CheckCheck,
   Cigarette,
   PhoneCall,
+  Server,
   UtensilsCrossed,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { cn } from "./lib/utils";
 
 export const TIMING = 5 * 1000; // Timing in Seconds
@@ -58,6 +59,10 @@ function App() {
         return <UtensilsCrossed className="w-40 h-40 text-red-500 ms-4" />;
       case "Am Rauchen":
         return <Cigarette className="w-40 h-40 text-red-500 ms-4" />;
+      case "Auf Silbers Platz":
+        return <UtensilsCrossed className="w-40 h-40 text-red-500 ms-4" />;
+      case "In Wartung":
+        return <Server className="w-40 h-40 text-red-500 ms-4" />;
     }
   };
 
@@ -74,6 +79,10 @@ function App() {
       case "Im Mittag":
         return "border-red-500";
       case "Am Rauchen":
+        return "border-red-500";
+      case "Auf Silbers Platz":
+        return "border-red-500";
+      case "In Wartung":
         return "border-red-500";
     }
   };
