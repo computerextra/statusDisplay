@@ -91,12 +91,12 @@ export default function Admin() {
             Rauchen <Cigarette className="w-4 h-4 text-red-500 ms-4" />
           </div>
         </Button>
-        <Button onClick={handleClick("Am Rauchen")}>
+        <Button onClick={handleClick("In Wartung")}>
           <div className="flex items-center justify-center gap-6">
             Wartung <Server className="w-4 h-4 text-red-500 ms-4" />
           </div>
         </Button>
-        <Button onClick={handleClick("Am Rauchen")}>
+        <Button onClick={handleClick("Auf Silbers Platz")}>
           <div className="flex items-center justify-center gap-6">
             Silber <UtensilsCrossed className="w-4 h-4 text-red-500 ms-4" />
           </div>
